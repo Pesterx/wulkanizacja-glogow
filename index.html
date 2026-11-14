@@ -60,19 +60,24 @@
           href="/"
           class="d-flex align-items-center mb-3 md:mb-0 md:me-auto theme-inverse text-decoration-none"
         >
-          <img src="./logo.PNG" class="logo" alt="Logo Emarson" /><span
-            class="fs-xl"
-            >Wulkanizacja Emarson</span
-          ></a
+          <img
+            src="./resources/logo.PNG"
+            class="logo"
+            alt="Logo Emarson"
+          /><span class="fs-xl">Wulkanizacja Emarson</span></a
         >
         <ul class="nav">
           <li class="nav-item">
-            <a href="#" class="nav-link active" aria-current="page">Oferta</a>
+            <a href="#uslugi" class="nav-link">Usługi</a>
           </li>
-          <li class="nav-item"><a href="#" class="nav-link">Usługi</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">Kontakt</a></li>
           <li class="nav-item">
-            <a href="#" class="nav-link theme-warning">Umów się!</a>
+            <a href="#realizacje" class="nav-link">Ostatnie realizacje</a>
+          </li>
+          <li class="nav-item"><a href="#kontakt" class="nav-link">Kontakt</a></li>
+          <li class="nav-item">
+            <a href="tel:+48530000074" class="nav-link theme-warning"
+              >Umów się!</a
+            >
           </li>
         </ul>
       </header>
@@ -82,7 +87,7 @@
       <div class="row lg:flex-row-reverse align-items-center g-5 py-5">
         <div class="col-10 sm:col-8 lg:col-6">
           <img
-            src="./emarson-van.webp"
+            src="./resources/emarson-van.webp"
             class="d-block lg:mx-auto img-fluid"
             alt="Zdjęcie mobilnej wulkanizacji"
             width="700"
@@ -112,7 +117,7 @@
       </div>
     </div>
 
-    <div class="container py-3">
+    <div class="container py-3" id="uslugi">
       <div class="pricing-header p-3 md:pb-4 mx-auto text-center">
         <h3 class="fs-3xl fw-normal fg-emphasis-inverse">Usługi</h3>
         <p class="fs-lg fw-light">
@@ -146,7 +151,52 @@
           </table>
         </div>
       </main>
-      
+    </div>
+
+    <div class="container py-3" id="realizacje">
+      <div class="p-3 md:pb-4 mx-auto text-center">
+        <h3 class="fs-3xl fw-normal fg-emphasis-inverse">Ostatnie realizacje</h3>
+      </div>
+      <div class="carousel" aria-roledescription="carousel" aria-label="Ostatnie realizacje">
+        <button class="carousel-btn carousel-prev" type="button" aria-label="Poprzednie zdjęcie">&#8249;</button>
+        <div class="carousel-track">
+          <img src="./resources/emarson-van.webp" alt="Realizacja 1" loading="lazy" />
+          <img src="./resources/emarson-van.webp" alt="Realizacja 2" loading="lazy" />
+          <img src="./resources/emarson-van.webp" alt="Realizacja 3" loading="lazy" />
+        </div>
+        <button class="carousel-btn carousel-next" type="button" aria-label="Następne zdjęcie">&#8250;</button>
+      </div>
+      <script>
+        document.querySelectorAll(".carousel").forEach((c) => {
+          const track = c.querySelector(".carousel-track");
+          const step = (dir) =>
+            track.scrollBy({ left: dir * track.clientWidth, behavior: "smooth" });
+          c.querySelector(".carousel-prev").onclick = () => step(-1);
+          c.querySelector(".carousel-next").onclick = () => step(1);
+        });
+      </script>
+    </div>
+
+    <div class="container">
+      <footer id="kontakt"
+        class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top"
+      >
+        <div class="col-md-4 d-flex align-items-center">
+          <span class="mb-3 mb-md-0 text-body-secondary"
+            >Emarson sp. z o.o.<br>Telefon: +48 530 000 074</span
+          >
+        </div>
+        <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+          <li class="ms-3">
+            <a class="text-body-secondary" href="https://www.instagram.com/emarson_mobilna_wulkanizacja/" aria-label="Instagram"
+              ><img class="bi" width="24" height="24" src="resources/instagram.svg" alt="Instagram" /></a>
+          </li>
+          <li class="ms-3">
+            <a class="text-body-secondary" href="https://www.facebook.com/profile.php?id=61595758971986" aria-label="Facebook"
+              ><img class="bi" width="24" height="24" src="resources/facebook.svg" alt="Facebook" /></a>
+          </li>
+        </ul>
+      </footer>
     </div>
   </body>
 </html>
